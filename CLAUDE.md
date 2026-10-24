@@ -131,3 +131,11 @@ Session 1 findings (Rook database + `00-rook/code/dispatch-routing/`):
 - The data contradicts "August is always soft" (the week of 3 Aug was the best). Tickets come from handlers and undercount the harm: Aunt Dot and Kip filed none.
 - The proximity reweight is probably not the main cause, but that's unconfirmed (the database has no travel times or score history). Wen should verify.
 - The plan is in `release-4.2-recovery-plan.md`: go back to 90s, reset the four scores, score misses separately with recovery over time, and add per-responder tracking and handler alerts. Open: penalty and recovery values (with Wen), and how to reset scores in production.
+
+Session 2 findings (Customer interviews + all 147 `support_tickets`):
+- The interviews (Dot, Ambrose, Halloran, Kip; 2–5 Sep) and the tickets come from almost entirely different people. Of the four interviewees, only Ambrose filed a ticket (1). The heaviest filers (Okafor 17, Pruitt 16, Fischer 12, Demir 10) were never interviewed.
+- Tickets: 45 callout tickets, all after 4.2 and all open (30 gone quiet, 13 gone before answering, 2 both). 14 filter tickets after 4.2. 59 caused by 4.2 in total; 4.2's 3 defect fixes held, with no repeat tickets.
+- Interview-only signals: handlers want an alert when their responder is pinged (0 tickets ask). Vesper and Meteor Mite going quiet. Ticket-only signals: 4 more quiet responders, 9 responders losing pings to the timer, and handlers not knowing the ping wait is 60s.
+- Contradiction: Halloran says maintenance scheduling got smarter, but 4 post-4.2 tickets say it's booking busy days. The link to 4.2 is unconfirmed.
+- Top 3 root causes: ① the 60s window (trigger), ② the scoring trap (miss = decline, no recovery), ③ no visibility (no handler alert, aggregate-only metric). Visuals: `rook-how-it-works.md`, `4.2-root-causes.md`, `4.2-top-3-root-causes.md`.
+- Next: interview Okafor and Pruitt; contact Dot and Kip; pass the gear-safety tickets (#3074, #3128, #3092, #3122, #3125) to Supply; check whether the availability time-zone bug (#3116) affects routing.
