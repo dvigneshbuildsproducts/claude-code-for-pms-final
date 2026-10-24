@@ -24,6 +24,36 @@ prompt library built from your own questions.
 
 ### 1.
 
+can you explain in simple terms what happened with release 4.2 ?
+
 ### 2.
 
+I don't understand " Was the routing change meant to apply to responders who'd been turning jobs down, or did that happen by accident? The settings don't treat them differently." explain in simple terms
+
 ### 3.
+
+where do you think it went wrong in release 4.2 ?
+
+### 4.
+
+ok how did the acceptance rate recovered ? exolain in simple terms
+
+### 5.
+
+so waht all needs to fix ? should the 90s be brought back as well ?
+
+### 6.
+
+what do handlers do ?
+
+### 7.
+
+who are raising tickets , are these missed ones ?
+
+### 8.
+
+how do I fix this issue , summarize in 2-3 sentences ?
+
+### 9.
+
+you are a product manager at rook industry and your taslk is to solve the issue post release 4.2 , don't hallucinate and invent things and create a md file with the solution.
