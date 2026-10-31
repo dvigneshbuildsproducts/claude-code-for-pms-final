@@ -139,3 +139,10 @@ Session 2 findings (Customer interviews + all 147 `support_tickets`):
 - Contradiction: Halloran says maintenance scheduling got smarter, but 4 post-4.2 tickets say it's booking busy days. The link to 4.2 is unconfirmed.
 - Top 3 root causes: ① the 60s window (trigger), ② the scoring trap (miss = decline, no recovery), ③ no visibility (no handler alert, aggregate-only metric). Visuals: `rook-how-it-works.md`, `4.2-root-causes.md`, `4.2-top-3-root-causes.md`.
 - Next: interview Okafor and Pruitt; contact Dot and Kip; pass the gear-safety tickets (#3074, #3128, #3092, #3122, #3125) to Supply; check whether the availability time-zone bug (#3116) affects routing.
+
+Session 3 findings (`pings` vs `support_tickets`, wiki Releases/4.2 page):
+- Both sources move on 12 Aug (misses 1→7 that day; first "gone before answering" ticket #3041 at 15:41). Quiet tickets lag ~5 days, peak week of 24 Aug. Pattern: shock → spiral (gaps grow to days) → silence. Example: Vesper 14 pings/wk → 1, last take 17 Aug.
+- They disagree on size and who: gone-before tickets fell ~80% while misses fell ~45% (~110 misses since 12 Aug vs 15 tickets; 11 handlers filed once or twice, all still open). Tickets flag Halfmoon/Ashgrove (~30% drop) but miss Vesper/Meteor Mite (>90% drop): Aunt Dot, Kip and Halloran have never filed a ticket. Kip's load moved Meteor Mite → The Gale (13→21/wk).
+- The other 12 responders absorbed the four's pings (123→162/wk) and still miss ~18/wk; their miss penalties since 12 Aug need undoing too, not just the four.
+- The 60s cut was communicated only in release notes to handlers on the morning of 12 Aug; nothing in advance, nothing to responders. Handlers were still asking "is there a set amount of time?" (#3047, #3065). Other channels unconfirmed (ask Nadia/Marcus).
+- Fix ideas not yet in `release-4.2-recovery-plan.md`: recompute all 16 scores without misses, reply to/close the 45 open tickets, longer wait for the first ping after a quiet stretch, drop ticket volume as a health metric, advance notice + on-phone countdown, one routing change at a time with pre-agreed rollback triggers.
